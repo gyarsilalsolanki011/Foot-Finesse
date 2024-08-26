@@ -1,2 +1,2 @@
-#Foot Finesse
+# Foot Finesse
 Foot Finesse is your ultimate destination for stylish and comfortable footwear. Discover a curated collection of the latest trends and timeless classics, all designed to give your feet the perfect balance of elegance and comfort. Whether you're looking for the perfect pair of sneakers, formal shoes, or sandals, Foot Finesse has something for every step of your journey. Elevate your shoe game with ease and finesse
