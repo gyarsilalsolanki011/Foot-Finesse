@@ -2,8 +2,6 @@ package com.gsl.shoecollection.activities
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.gsl.shoecollection.MainActivity
 import com.gsl.shoecollection.databinding.ActivityIntroBinding
 
 class IntroActivity : BaseActivity() {
