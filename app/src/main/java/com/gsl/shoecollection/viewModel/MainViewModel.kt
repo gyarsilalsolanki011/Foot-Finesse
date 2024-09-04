@@ -9,7 +9,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.gsl.shoecollection.model.SliderModel
 
-class MainViewModel():ViewModel() {
+class MainViewModel(): ViewModel() {
 
     private val firebaseDatabase = FirebaseDatabase.getInstance()
 
@@ -35,7 +35,6 @@ class MainViewModel():ViewModel() {
             override fun onCancelled(error: DatabaseError) {
 
             }
-
         })
     }
 }
