@@ -2,13 +2,14 @@ package com.gsl.shoecollection.activities
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.CompositePageTransformer
 import androidx.viewpager2.widget.MarginPageTransformer
 import com.gsl.shoecollection.adapters.BrandAdapter
+import com.gsl.shoecollection.adapters.PopularAdapter
 import com.gsl.shoecollection.adapters.SliderAdapter
 import com.gsl.shoecollection.databinding.ActivityMainBinding
 import com.gsl.shoecollection.model.SliderModel
@@ -24,6 +25,7 @@ class MainActivity : BaseActivity() {
 
         initBanner()
         initBrand()
+        initPopular()
     }
 
     private fun initBanner() {
@@ -60,5 +62,15 @@ class MainActivity : BaseActivity() {
             binding.progressBarBrand.visibility = View.GONE
         })
         viewModel.loadBrands()
+    }
+
+    private fun initPopular() {
+        binding.progressBarPopular.visibility = View.VISIBLE
+        viewModel.popular.observe(this, Observer {
+            binding.viewPopular.layoutManager = GridLayoutManager(this@MainActivity, 2)
+            binding.viewPopular.adapter = PopularAdapter(it)
+            binding.progressBarPopular.visibility = View.GONE
+        })
+        viewModel.loadPopular()
     }
 }
