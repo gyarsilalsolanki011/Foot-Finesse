@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.request.RequestOptions
+import com.gsl.shoecollection.activities.DetailActivity
 import com.gsl.shoecollection.databinding.ViewholderRecommendedBinding
 import com.gsl.shoecollection.model.ItemsModel
 
@@ -34,9 +35,11 @@ class PopularAdapter(val items: MutableList<ItemsModel>):
             .apply(requestOptions)
             .into(holder.binding.pic)
 
-       /* holder.itemView.setOnClickListener{
-            val intent = Intent(holder.itemView.context, )
-        }*/
+        holder.itemView.setOnClickListener{
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java)
+            intent.putExtra("object", items[position])
+            holder.itemView.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int = items.size
